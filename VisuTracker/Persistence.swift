@@ -1,57 +1,64 @@
-//
-//  Persistence.swift
-//  VisuTracker
-//
-//  Created by Go Nakazawa on 2025/06/22.
-//
-
 import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
 
-    @MainActor
-    static let preview: PersistenceController = {
+    let container: NSPersistentContainer
+
+    init(inMemory: Bool = false) {
+        container = NSPersistentContainer(name: "VisuTracker")
+        
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            // App Groups用のURL設定
+            let appGroupIdentifier = "group.work.rockets.VisuTracker2"
+            guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupIdentifier) else {
+                fatalError("Failed to get container URL for App Group: \(appGroupIdentifier)")
+            }
+            let storeURL = containerURL.appendingPathComponent("VisuTracker.sqlite")
+            
+            let storeDescription = NSPersistentStoreDescription(url: storeURL)
+            storeDescription.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+            storeDescription.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
+            storeDescription.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
+            container.persistentStoreDescriptions = [storeDescription]
+        }
+        
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError? {
+                print("❌ Core Data error: \(error), \(error.userInfo)")
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            } else {
+                print("✅ Core Data loaded successfully")
+            }
+        }
+        
+        container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+}
+
+// MARK: - Preview Data
+extension PersistenceController {
+    static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        
+        // プレビュー用のサンプルデータを作成
+        let newItem = VisuItem(context: viewContext)
+        newItem.id = UUID()
+        newItem.timestamp = Date()
+        newItem.productName = "プレビュー商品"
+        newItem.price = "¥1,500"
+        newItem.pageURL = "https://example.com"
+        newItem.imageURL = "https://img.icons8.com/color/300/clothes.png"
+        
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
         return result
     }()
-
-    let container: NSPersistentContainer
-
-    init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "VisuTracker")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        container.viewContext.automaticallyMergesChangesFromParent = true
-    }
 }

@@ -6,14 +6,96 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		032440D42E1023DE0037CF95 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032440D32E1023DE0037CF95 /* Social.framework */; };
+		032440D62E1023E70037CF95 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032440D52E1023E70037CF95 /* CoreData.framework */; };
+		032440D82E1023F10037CF95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032440D72E1023F10037CF95 /* Foundation.framework */; };
+		032440DA2E1023FB0037CF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032440D92E1023FB0037CF95 /* UIKit.framework */; };
+		03C23D142E07ED5C001ACE76 /* VisuTrackerShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 03C23D0A2E07ED5B001ACE76 /* VisuTrackerShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03C23D122E07ED5C001ACE76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03C23CEA2E07DFEB001ACE76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03C23D092E07ED5B001ACE76;
+			remoteInfo = VisuTrackerShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		03C23D192E07ED5C001ACE76 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				03C23D142E07ED5C001ACE76 /* VisuTrackerShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		032440D32E1023DE0037CF95 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		032440D52E1023E70037CF95 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		032440D72E1023F10037CF95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		032440D92E1023FB0037CF95 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03C23CF22E07DFEB001ACE76 /* VisuTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisuTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03C23D0A2E07ED5B001ACE76 /* VisuTrackerShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VisuTrackerShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0335319B2E1803950064F9D5 /* Exceptions for "VisuTrackerShareExtension" folder in "VisuTracker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ShareViewController.swift,
+			);
+			target = 03C23CF12E07DFEB001ACE76 /* VisuTracker */;
+		};
+		038AB0A82E194D5F00E102C4 /* Exceptions for "VisuTracker" folder in "VisuTrackerShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ProductScraper.swift,
+				VisuTracker.xcdatamodeld,
+			);
+			target = 03C23D092E07ED5B001ACE76 /* VisuTrackerShareExtension */;
+		};
+		03C23D152E07ED5C001ACE76 /* Exceptions for "VisuTrackerShareExtension" folder in "VisuTrackerShareExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 03C23D092E07ED5B001ACE76 /* VisuTrackerShareExtension */;
+		};
+		03C23D1B2E07F390001ACE76 /* Exceptions for "VisuTracker" folder in "VisuTracker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 03C23CF12E07DFEB001ACE76 /* VisuTracker */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		03C23CF42E07DFEB001ACE76 /* VisuTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				03C23D1B2E07F390001ACE76 /* Exceptions for "VisuTracker" folder in "VisuTracker" target */,
+				038AB0A82E194D5F00E102C4 /* Exceptions for "VisuTracker" folder in "VisuTrackerShareExtension" target */,
+			);
 			path = VisuTracker;
+			sourceTree = "<group>";
+		};
+		03C23D0B2E07ED5B001ACE76 /* VisuTrackerShareExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0335319B2E1803950064F9D5 /* Exceptions for "VisuTrackerShareExtension" folder in "VisuTracker" target */,
+				03C23D152E07ED5C001ACE76 /* Exceptions for "VisuTrackerShareExtension" folder in "VisuTrackerShareExtension" target */,
+			);
+			path = VisuTrackerShareExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +108,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03C23D072E07ED5B001ACE76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				032440DA2E1023FB0037CF95 /* UIKit.framework in Frameworks */,
+				032440D82E1023F10037CF95 /* Foundation.framework in Frameworks */,
+				032440D62E1023E70037CF95 /* CoreData.framework in Frameworks */,
+				032440D42E1023DE0037CF95 /* Social.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032440D22E1023DD0037CF95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				032440D92E1023FB0037CF95 /* UIKit.framework */,
+				032440D72E1023F10037CF95 /* Foundation.framework */,
+				032440D52E1023E70037CF95 /* CoreData.framework */,
+				032440D32E1023DE0037CF95 /* Social.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		03C23CE92E07DFEB001ACE76 = {
 			isa = PBXGroup;
 			children = (
 				03C23CF42E07DFEB001ACE76 /* VisuTracker */,
+				03C23D0B2E07ED5B001ACE76 /* VisuTrackerShareExtension */,
+				032440D22E1023DD0037CF95 /* Frameworks */,
 				03C23CF32E07DFEB001ACE76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				03C23CF22E07DFEB001ACE76 /* VisuTracker.app */,
+				03C23D0A2E07ED5B001ACE76 /* VisuTrackerShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +162,12 @@
 				03C23CEE2E07DFEB001ACE76 /* Sources */,
 				03C23CEF2E07DFEB001ACE76 /* Frameworks */,
 				03C23CF02E07DFEB001ACE76 /* Resources */,
+				03C23D192E07ED5C001ACE76 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				03C23D132E07ED5C001ACE76 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				03C23CF42E07DFEB001ACE76 /* VisuTracker */,
@@ -69,6 +178,28 @@
 			productName = VisuTracker;
 			productReference = 03C23CF22E07DFEB001ACE76 /* VisuTracker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		03C23D092E07ED5B001ACE76 /* VisuTrackerShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03C23D162E07ED5C001ACE76 /* Build configuration list for PBXNativeTarget "VisuTrackerShareExtension" */;
+			buildPhases = (
+				03C23D062E07ED5B001ACE76 /* Sources */,
+				03C23D072E07ED5B001ACE76 /* Frameworks */,
+				03C23D082E07ED5B001ACE76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				03C23D0B2E07ED5B001ACE76 /* VisuTrackerShareExtension */,
+			);
+			name = VisuTrackerShareExtension;
+			packageProductDependencies = (
+			);
+			productName = VisuTrackerShareExtension;
+			productReference = 03C23D0A2E07ED5B001ACE76 /* VisuTrackerShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +212,9 @@
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					03C23CF12E07DFEB001ACE76 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					03C23D092E07ED5B001ACE76 = {
 						CreatedOnToolsVersion = 16.3;
 					};
 				};
@@ -100,12 +234,20 @@
 			projectRoot = "";
 			targets = (
 				03C23CF12E07DFEB001ACE76 /* VisuTracker */,
+				03C23D092E07ED5B001ACE76 /* VisuTrackerShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		03C23CF02E07DFEB001ACE76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03C23D082E07ED5B001ACE76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +264,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03C23D062E07ED5B001ACE76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03C23D132E07ED5C001ACE76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03C23D092E07ED5B001ACE76 /* VisuTrackerShareExtension */;
+			targetProxy = 03C23D122E07ED5C001ACE76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		03C23D002E07DFF9001ACE76 /* Debug */ = {
@@ -251,11 +408,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VisuTracker/VisuTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V7L8AP724U;
+				DEVELOPMENT_TEAM = HYR652WBMA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisuTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -266,7 +425,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = work.rockets.VisuTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = work.rockets.VisuTracker2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -279,11 +438,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VisuTracker/VisuTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V7L8AP724U;
+				DEVELOPMENT_TEAM = HYR652WBMA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisuTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,8 +455,60 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = work.rockets.VisuTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = work.rockets.VisuTracker2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		03C23D172E07ED5C001ACE76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VisuTrackerShareExtension/VisuTrackerShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HYR652WBMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisuTrackerShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VisuTracker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = work.rockets.VisuTracker2.VisuTrackerShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03C23D182E07ED5C001ACE76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VisuTrackerShareExtension/VisuTrackerShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HYR652WBMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VisuTrackerShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VisuTracker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = work.rockets.VisuTracker2.VisuTrackerShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,6 +532,15 @@
 			buildConfigurations = (
 				03C23D032E07DFF9001ACE76 /* Debug */,
 				03C23D042E07DFF9001ACE76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03C23D162E07ED5C001ACE76 /* Build configuration list for PBXNativeTarget "VisuTrackerShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03C23D172E07ED5C001ACE76 /* Debug */,
+				03C23D182E07ED5C001ACE76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
